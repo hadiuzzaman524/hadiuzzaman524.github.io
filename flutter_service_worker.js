@@ -3,9 +3,9 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "assets/AssetManifest.json": "d0c18ea1088346d48552a0adb408e426",
+  "assets/AssetManifest.json": "64fb2c0be9a1336ea22e42be0ead4793",
 "assets/FontManifest.json": "dc3d03800ccca4601324923c0b1d6d57",
-"assets/fonts/MaterialIcons-Regular.otf": "1288c9e28052e028aba623321f7826ac",
+"assets/fonts/MaterialIcons-Regular.otf": "4e6447691c9509f7acdbf8a931a85ca1",
 "assets/images/100x64.png": "638ceef9b14ed2e7b8deed56e225cc08",
 "assets/images/algo.jpg": "95081bf261ed71e1e6c26ca554aad20e",
 "assets/images/and.png": "4eb9b0866b267ff86d1ae6168fdb3542",
@@ -27,6 +27,7 @@ const RESOURCES = {
 "assets/images/download.png": "75d3acbeda8633b72015010704ef7dde",
 "assets/images/ds.jpg": "3a6e5ad7f0e3b92d7ed7259db6b0be8e",
 "assets/images/email.png": "efccbc75a6922785880e261b9222038e",
+"assets/images/etutor.jpg": "bc282b0b00cb442d99759b159535b5d3",
 "assets/images/etutor64x64.jpg": "989d3006361edc02891e1f99e1dd1ba5",
 "assets/images/facebook.png": "9e8597e2eab2195c07a8345c7a881e84",
 "assets/images/firebase64x64.png": "54ba5da64ea862c940d4f4b3a9b1e71e",
@@ -36,10 +37,12 @@ const RESOURCES = {
 "assets/images/gith.png": "893e1d0b85195a46c4f8ea91d6d78390",
 "assets/images/github.png": "aaa0dc8e18f491b91877ddaf41ab546d",
 "assets/images/gmail.png": "bcb7da3b0772db5b4294eeeb8b6c0553",
+"assets/images/hadiuzzaman.png": "251d75425a1dd7983fd3f88c772a3dba",
 "assets/images/html64x64.png": "6b459b28b1cb2cad57261d587d9e6f2c",
 "assets/images/java64x64.png": "0a241ec5d02be538a5b8433ae950dc14",
 "assets/images/jupyter.png": "170711bb8db685acdd3ab25565021f56",
 "assets/images/linkedin.png": "6900785d05011bbdf0e140a895a34e6d",
+"assets/images/messmonitor.jpg": "ca8e3c5a2b6bb0fb4ebac83567fe4482",
 "assets/images/meup.jpg": "5ce2f01262f938a71383c8f3aefd8a5d",
 "assets/images/netbeans.png": "f31f9f2bb2f7d5b01efef9551921fdf0",
 "assets/images/php64x64.png": "837856e1c990bcfc1c89c9b68c29c2bf",
@@ -48,6 +51,7 @@ const RESOURCES = {
 "assets/images/powerpoint.jpg": "94232af8985126753fb332136f831181",
 "assets/images/problemsolving.png": "b15c04e5d34f576d17d7750725ac80be",
 "assets/images/python64x64.png": "6d3e9eb66454d920cd5d56fc1907f022",
+"assets/images/qb.png": "04e849e38273f090887510fef042463b",
 "assets/images/sql.png": "81c08c9fad3c072d2218debd1b24d26b",
 "assets/images/telephone.png": "00c25303a13c119d9af725482f6c263b",
 "assets/images/texstudio.jpg": "405a1ac0d57d987d14a03dc52a8608b1",
@@ -56,14 +60,14 @@ const RESOURCES = {
 "assets/images/wdp.png": "14bab4b57650ce491476c2d88c23a339",
 "assets/images/word.jpg": "d01809be3645acb8a29920b5df7dd1df",
 "assets/images/xd.png": "5f24c4fc28c3f881caf29cff85001d5b",
-"assets/NOTICES": "730e5d5aa26918a97d7892ac0f35401d",
+"assets/NOTICES": "61bec60cac6dd445bcd22a5773d9a1a0",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
-"index.html": "c8030d2ebe426fbe0f734d2dca7b6496",
-"/": "c8030d2ebe426fbe0f734d2dca7b6496",
-"main.dart.js": "baa0dabff096e028bdccb53f1e0bde4d",
+"index.html": "952f7e536829c17b2f44736021796e94",
+"/": "952f7e536829c17b2f44736021796e94",
+"main.dart.js": "2d65fe5ec5e47cd43bba7aeb3b345cba",
 "manifest.json": "0a5e8fbb63f9cb529f03ebd4a038c740",
 "version.json": "6dbe2332cbf85ec1853a9a926bfd1045"
 };
@@ -83,7 +87,7 @@ self.addEventListener("install", (event) => {
   return event.waitUntil(
     caches.open(TEMP).then((cache) => {
       return cache.addAll(
-        CORE.map((value) => new Request(value + '?revision=' + RESOURCES[value], {'cache': 'reload'})));
+        CORE.map((value) => new Request(value, {'cache': 'reload'})));
     })
   );
 });
@@ -209,7 +213,7 @@ async function downloadOffline() {
     }
     currentContent[key] = true;
   }
-  for (var resourceKey in Object.keys(RESOURCES)) {
+  for (var resourceKey of Object.keys(RESOURCES)) {
     if (!currentContent[resourceKey]) {
       resources.push(resourceKey);
     }
