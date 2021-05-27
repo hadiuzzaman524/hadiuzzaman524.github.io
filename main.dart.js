@@ -55916,7 +55916,7 @@ h=K.mO(80)
 g=H.b([C.jh,C.ty],t.r8)
 f=K.mO(30)
 e=t.Y
-return new N.ky(M.aT(d,B.jw(1,H.b([T.dk(H.b([p,o,n,m,l,k,j,i,M.aT(d,D.acl(D.abp(M.aT(C.ac,L.bw("Download My CV",d,A.cu(d,d,C.j,d,d,d,d,d,d,d,d,15,d,d,d,d,!0,d,d,d,d,d,d,d),C.bE,d),C.k,d,new S.al(0,200,40,1/0),d,d,d,d,d,d,d,d),new S.d2(d,d,d,f,d,new T.h7(C.cf,C.bM,C.aL,g,d,d),C.T)),new R.a_f(c),new V.aM(0,0,0,0),new X.d8(h,C.w)),C.k,d,d,d,d,40,new V.aM(0,9,0,0),d,d,d,d)],e),C.cq,q),U.dy("images/hadiuzzaman.png",C.bm)],e),r,20,0,d,!1),C.k,d,d,d,d,d,d,new V.aM(20,20,20,20),d,d,d),c,b,d)},
+return new N.ky(M.aT(d,B.jw(1,H.b([T.dk(H.b([p,o,n,m,l,k,j,i,M.aT(d,D.acl(D.abp(M.aT(C.ac,L.bw("Download Resume",d,A.cu(d,d,C.j,d,d,d,d,d,d,d,d,15,d,d,d,d,!0,d,d,d,d,d,d,d),C.bE,d),C.k,d,new S.al(0,200,40,1/0),d,d,d,d,d,d,d,d),new S.d2(d,d,d,f,d,new T.h7(C.cf,C.bM,C.aL,g,d,d),C.T)),new R.a_f(c),new V.aM(0,0,0,0),new X.d8(h,C.w)),C.k,d,d,d,d,40,new V.aM(0,9,0,0),d,d,d,d)],e),C.cq,q),U.dy("images/hadiuzzaman.png",C.bm)],e),r,20,0,d,!1),C.k,d,d,d,d,d,d,new V.aM(20,20,20,20),d,d,d),c,b,d)},
 $C:"$2",
 $R:2,
 $S:338}
